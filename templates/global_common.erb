@@ -11,7 +11,7 @@ common {
 <%- common.sort.each do |key,value| -%>
 <%- if value.is_a?(Hash) -%>
 	<%= key %> {
-<%- value.each do |k,v| -%>
+<%- value.sort.each do |k,v| -%>
 		<%= k %>	<%= v %>;
 <%- end -%>
 	}
