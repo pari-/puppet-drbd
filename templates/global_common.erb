@@ -3,12 +3,12 @@
 #
 
 global {
-<%- global.each do |key,value| -%>
+<%- global.sort.each do |key,value| -%>
 	<%= key %>	<%= value %>;
 <%- end -%>
 
 common {
-<%- common.each do |key,value| -%>
+<%- common.sort.each do |key,value| -%>
 <%- if value.is_a?(Hash) -%>
 	<%= key %> {
 <%- value.each do |k,v| -%>

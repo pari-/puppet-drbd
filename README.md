@@ -1,5 +1,5 @@
 puppet module for drbd
-============================
+======================
 
 DRBD is a distributed replicated blockdevice designed to form high availability
 clusters by mirroring a whole blockdevice via network.
