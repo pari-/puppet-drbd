@@ -6,6 +6,7 @@ define drbd::resource (
   $rate = '100M',
   $port = '7789',
   $metadisk = 'internal',
+  $options = undef
 ) {
 
   include drbd
