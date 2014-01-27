@@ -13,6 +13,8 @@ define drbd::resource (
 
   file {"${drbd::config_pool}/${title}.res":
     ensure  => present,
+    owner   => 0,
+    group   => 0,
     content => template('drbd/resource.erb'),
   }
 }
