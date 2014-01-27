@@ -3,7 +3,7 @@
 #
 
 resource <%= scope.lookupvar('title') %> {
-<%- options.sort.each do |key,value| -%>
+<%- scope.lookupvar('options').sort.each do |key,value| -%>
 <%- if value.is_a?(Hash) -%>
     <%= key %> {
 <%- value.sort.each do |k,v| -%>
