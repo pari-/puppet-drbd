@@ -15,6 +15,7 @@ define drbd::resource (
     ensure  => present,
     owner   => 0,
     group   => 0,
+    mode    => '0644',
     content => template('drbd/resource.erb'),
   }
 }

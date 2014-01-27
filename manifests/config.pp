@@ -3,6 +3,7 @@ class drbd::config {
     ensure => 'present',
     owner  => 0,
     group  => 0,
+    mode    => '0644',
     source => 'puppet:///modules/drbd/drbd.conf',
   }
 
