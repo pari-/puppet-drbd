@@ -2,8 +2,8 @@
 # this file is managed by puppet!
 #
 
-resource <%= scope.lookupvar('title') %> {
-<%- scope.lookupvar('options').sort.each do |key,value| -%>
+resource <%= scope['title'] %> {
+<%- scope['options'].sort.each do |key,value| -%>
 <%- if value.is_a?(Hash) -%>
     <%= key %> {
 <%- value.sort.each do |k,v| -%>
@@ -13,13 +13,13 @@ resource <%= scope.lookupvar('title') %> {
 <%- end -%>
 <%- end -%>
 
-    device      <%= scope.lookupvar('dev') %>;
-    meta-disk   <%= scope.lookupvar('metadisk') %>;
-<%- scope.lookupvar('hosts').each_with_index do |element, index| -%>
+    device      <%= scope['dev'] %>;
+    meta-disk   <%= scope['metadisk'] %>;
+<%- scope['hosts'].each_with_index do |element, index| -%>
 
-    on <%= scope.lookupvar('hosts')[index] %> {
-        address <%= scope.lookupvar('ips')[index] %>:<%= scope.lookupvar('port') %>;
-        disk    <%= scope.lookupvar('disks')[index] %>;
+    on <%= scope['hosts'][index] %> {
+        address <%= scope['ips'][index] %>:<%= scope['port'] %>;
+        disk    <%= scope['disks'][index] %>;
     }
 <%- end -%>
 }
