@@ -8,7 +8,7 @@ class drbd::global_common (
     require => Class['drbd::config'],
     notify  => Class['drbd::service'],
   }
-  
+
   Class['drbd::global_common'] -> Class['drbd']
 
 }
